@@ -1,18 +1,20 @@
 import { Container, MovieList, Movie } from "./styles";
 import { APIKey } from '../../config/key';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { searchText } from "../Home";
 
 
 function Search() {
+
+    const { searchText } = useParams()
 
     const [movies, setMovies] = useState([])
     const image_path = 'https://image.tmdb.org/t/p/w500'
 
     useEffect(() => {
 
-        fetch(`https://api.themoviedb.org/3/search/movie?query=Parasite&api_key=${APIKey}&language=en-US&page=1&include_adult=true`)
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${searchText}&api_key=${APIKey}&language=en-US&page=1&include_adult=true`)
             .then(response => response.json())
             .then(data => setMovies(data.results))
 

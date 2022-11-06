@@ -21,6 +21,12 @@ export const Container = styled.div`
         transition: all 0.3s;
     }
 
+    .disabledCursor {
+        background: #50274C;
+        color: #805F7C;
+        cursor: default;
+    }
+
     form {
         width: 100%;
         justify-content: center;

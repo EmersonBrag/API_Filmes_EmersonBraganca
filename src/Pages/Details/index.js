@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useNavigate } from "react-router-dom"
 import { APIKey } from "../../config/key";
 import { Container } from "./styles";
 
@@ -28,6 +28,8 @@ function Details () {
             })
     }, [id])
 
+    const navigate = useNavigate();
+
     return (
         <Container>
             <div className="movie">
@@ -36,7 +38,7 @@ function Details () {
                     <h1>{movie.title}</h1>
                     <span>Sinopse: {movie.sinopse}</span>
                     <span className="release-date">Release date: {movie.releaseDate}</span>
-                    <Link to="/"><button>Go Back</button></Link>                   
+                    <button onClick={() => navigate(-1)}>Go back</button>                   
                 </div>
             </div>
             

@@ -27,7 +27,7 @@ export const Container = styled.div`
         max-width: 50%;
     }
 
-    button {
+    .details button {
         background: #d829c6;
         border: none;
         cursor: pointer;
@@ -36,7 +36,6 @@ export const Container = styled.div`
         padding: 0.8rem 2rem;
         margin-top: 2rem;
         font-size: 100%;
-        font-weight: bold;
         transition: all 0.3s;
     }
 

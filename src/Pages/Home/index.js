@@ -28,7 +28,12 @@ function Home() {
                     id="query" 
                     onChange={ e => setSearch(e.target.value)}
                 />
-                <button type="submit">Search</button>
+                {search.length > 0 ? (
+                    <Link to={`/search/${search}`}><button type="submit">Search</button></Link>
+                ) : (
+                    <button className="disabledCursor" disabled>Search</button>
+                )}              
+                
             </form>
             <MovieList>
                 {movies.map(movies => {
